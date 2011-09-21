@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Object-Tiny-RW
-version:            1.06
+version:            1.07
 abstract:           A date object with as little code as possible (and rw accessors)
 author:
     - Adam Kennedy <adamk@cpan.org>, ::RW fork by Steffen Schwigon
@@ -16,7 +16,7 @@ no_index:
     directory:
         - t
         - inc
-generated_by:       ExtUtils::MakeMaker version 6.55_02
+generated_by:       ExtUtils::MakeMaker version 6.56
 meta-spec:
     url:      http://module-build.sourceforge.net/META-spec-v1.4.html
     version:  1.4

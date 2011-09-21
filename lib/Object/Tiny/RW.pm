@@ -3,7 +3,7 @@ package Object::Tiny::RW;
 use strict 'vars', 'subs';
 BEGIN {
 	require 5.004;
-	$Object::Tiny::RW::VERSION = '1.06';
+	$Object::Tiny::RW::VERSION = '1.07';
 }
 
 sub import {
@@ -16,7 +16,7 @@ sub import {
 		map {
 			defined and ! ref and /^[^\W\d]\w*$/s
 			or die "Invalid accessor name '$_'";
-                        "sub $_ { if (defined \$_[1]) { \$_[0]->{$_} = \$_[1] } ; return \$_[0]->{$_} }\n"
+                        "sub $_ { if (\@_ > 1) { \$_[0]->{$_} = \$_[1] } ; return \$_[0]->{$_} }\n"
 		} @_;
 	die "Failed to generate $pkg" if $@;
 	return 1;
@@ -88,7 +88,7 @@ L<Config::Tiny>
 
 Copyright 2007 - 2008 Adam Kennedy.
 
-Copyright 2009 Steffen Schwigon.
+Copyright 2009-2011 Steffen Schwigon.
 
 This program is free software; you can redistribute
 it and/or modify it under the same terms as Perl itself.
